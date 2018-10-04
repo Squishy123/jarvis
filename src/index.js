@@ -5,13 +5,13 @@ let greeter = require('./greeter');
 
 const server = Hapi.server({
     port: process.env.PORT || 3000,
-    host: process.env.HOST || "localhost"
+    host: process.env.HOST || "0.0.0.0"
 });
 
 const init = async() => {
     await server.start();
     await server.register(require('inert'));
-    /*
+    
     server.route({
         method: 'GET',
         path: '/{param*}',
@@ -20,7 +20,7 @@ const init = async() => {
                 path: 'views'
             }
         }
-    })*/
+    })
 
     greeter.spawn({
         token: process.env.token
