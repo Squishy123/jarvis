@@ -5,7 +5,7 @@ let greeter = require('./greeter');
 
 const server = Hapi.server({
     port: process.env.PORT || 3000,
-    host: "jarvis-rcs.herokuapp.com"
+    host: process.env.HOST || "localhost"
 });
 
 const init = async() => {
