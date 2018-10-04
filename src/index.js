@@ -11,7 +11,7 @@ const server = Hapi.server({
 const init = async() => {
     await server.start();
     await server.register(require('inert'));
-
+    /*
     server.route({
         method: 'GET',
         path: '/{param*}',
@@ -20,7 +20,7 @@ const init = async() => {
                 path: 'views'
             }
         }
-    })
+    })*/
 
     greeter.spawn({
         token: process.env.token
