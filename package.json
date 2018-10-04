@@ -1,0 +1,15 @@
+{
+  "name": "thematrix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Squishy123/thematrix.git",
+  "author": "Christian Wang <christian.gnaw@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "botkit": "^0.6.16",
+    "dotenv": "^6.0.0"
+  },
+  "scripts": {
+    "start": "npm run index.js"
+  }
+}
