@@ -7,9 +7,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "botkit": "^0.6.16",
-    "dotenv": "^6.0.0"
+    "dotenv": "^6.0.0",
+    "hapi": "^17.6.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./src"
   }
 }

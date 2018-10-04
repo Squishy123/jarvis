@@ -8,13 +8,6 @@ let controller = bk.slackbot({
     retry: Infinity
 })
 
-controller.spawn({
-    token: process.env.token
-}).startRTM((err, bot, payload) => {
-    if(err) throw new Error(err)
-    console.log('Connected to Slack RTM!')
-});
-
 controller.on('create_user', (bot, message) => {
     bot.replyPrivate(message, `Hello <@${message.user}> welcome to the Ryerson Computer Science Slack!`)
     bot.replyPublic(message, `<@${message.user}> joined for the first time`)
@@ -23,3 +16,5 @@ controller.on('create_user', (bot, message) => {
 controller.hears('help', 'direct_message', (bot, message) => {
     bot.reply(message, "No commands supported yet... ")
 })
+
+module.exports = controller;
