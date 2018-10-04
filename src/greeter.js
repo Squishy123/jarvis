@@ -17,4 +17,8 @@ controller.hears('help', 'direct_message', (bot, message) => {
     bot.reply(message, "No commands supported yet... ")
 })
 
+controller.hears('alert', 'direct_message', (bot, message) => {
+    bot.reply(message, "Most Recent Alert: something goes here  ")
+})
+
 module.exports = controller;
