@@ -10,11 +10,24 @@ const server = Hapi.server({
 
 const init = async() => {
     await server.start();
+    await server.register(require('inert'));
+
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: 'views'
+            }
+        }
+    })
 
     greeter.spawn({
         token: process.env.token
     }).startRTM((err, bot, payload) => {
-        if(err) throw new Error(err)
+        if(err) {
+            throw new Error(err)
+        }
         console.log('Connected to Slack RTM!')
     });
 
